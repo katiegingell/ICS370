@@ -2,6 +2,8 @@ package com.example.prototype;
 
 import java.util.ArrayList;
 import java.util.List;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class Flight {
     private float price;
@@ -9,6 +11,8 @@ public class Flight {
     private String destination;
 
     private long date;
+
+    private Button BookNowButton;
 
 
     public Flight(float price, String destination, long date) {
