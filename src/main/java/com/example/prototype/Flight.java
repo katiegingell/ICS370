@@ -1,14 +1,19 @@
 package com.example.prototype;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
-public class Flight {
+public class Flight implements Serializable {
     private float price;
 
     private String destination;
 
     private long date;
+
+    private Button BookNowButton;
 
 
     public Flight(float price, String destination, long date) {
