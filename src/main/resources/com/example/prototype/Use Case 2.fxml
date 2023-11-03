@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" fx:controller="com.example.prototype.SearchController" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prototype.SearchController">
    <top>
       <TextField prefHeight="25.0" prefWidth="302.0" promptText="Search" BorderPane.alignment="CENTER" />
    </top>
@@ -13,13 +13,15 @@
             <TextField layoutX="26.0" layoutY="64.0" promptText="Arrival" />
             <TextField layoutX="26.0" layoutY="27.0" promptText="Departure" />
             <DatePicker layoutX="13.0" layoutY="100.0" />
-            <Button layoutX="74.0" layoutY="138.0" mnemonicParsing="false" text="Search" onAction="#search"/>
-            
+            <Button layoutX="74.0" layoutY="138.0" mnemonicParsing="false" onAction="#search" text="Search" />
+            <Button fx:id="BookNowButton" onAction="#onBookNowButtonClick" layoutX="65.0" layoutY="415.0" mnemonicParsing="false" text="Book Now"  />
+
+
          </children>
       </Pane>
    </left>
    <center>
-      <TableView fx:id="flights" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+      <TableView fx:id="flights" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
 
    </center>
 </BorderPane>
