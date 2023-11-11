@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -18,10 +19,13 @@ import java.util.ResourceBundle;
 
 public class SearchController implements Initializable {
     @FXML
+    public Button BookNowButton;
+    @FXML
     private TableView<Flight> flights;
     private ObservableList<Flight> flightData;
 
-
+    @FXML
+    private Button logoutButton;
 
     public void search() {
 
@@ -42,7 +46,7 @@ public class SearchController implements Initializable {
     private void loadPaymentsScene() throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Make a Payment.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
 
 
         ((Stage) flights.getScene().getWindow()).setScene(scene);
@@ -68,5 +72,18 @@ public class SearchController implements Initializable {
 
 
         flights.getColumns().setAll(destination,priceCol);
+    }
+
+    private void loadLoginScene() throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+        ((Stage) logoutButton.getScene().getWindow()).setScene(scene);
+
+    }
+    @FXML
+    public void onLogoutButtonClick(ActionEvent actionEvent) throws IOException {
+        loadLoginScene();
     }
 }

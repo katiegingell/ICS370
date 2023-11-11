@@ -27,9 +27,6 @@ public class HelloController implements Initializable {
     private Button loginButton;
 
     @FXML
-    private Button BookNowButton;
-
-    @FXML
     private Label loginStatusLabel;
 
     @Override
@@ -57,26 +54,12 @@ public class HelloController implements Initializable {
     private void loadFlightsScene() throws IOException {
 
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Use Case 2.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
 
             ((Stage) loginButton.getScene().getWindow()).setScene(scene);
 
         }
 
 
-    public void onCheckOutClick(ActionEvent actionEvent) {
-
-       if (UserRepo.selectedFlight != null) {
-
-           UserRepo.currentUser.getBookFlights().add(UserRepo.selectedFlight);
-
-           PasswordUtils.saveUserToFile(UserRepo.currentUser);
-
-           UserRepo.selectedFlight = null;
-
-
-       }
-
-    }
 }
 

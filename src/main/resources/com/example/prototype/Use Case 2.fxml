@@ -14,7 +14,8 @@
             <TextField layoutX="26.0" layoutY="27.0" promptText="Departure" />
             <DatePicker layoutX="13.0" layoutY="100.0" />
             <Button layoutX="74.0" layoutY="138.0" mnemonicParsing="false" onAction="#search" text="Search" />
-            <Button fx:id="BookNowButton" onAction="#onBookNowButtonClick" layoutX="65.0" layoutY="415.0" mnemonicParsing="false" text="Book Now"  />
+            <Button fx:id="BookNowButton" layoutX="64.0" layoutY="360.0" mnemonicParsing="false" onAction="#onBookNowButtonClick" text="Book Now" />
+            <Button fx:id="logoutButton" layoutX="70.0" layoutY="396.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="Log Out" />
 
 
          </children>
