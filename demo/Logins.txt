@@ -1,0 +1,12 @@
+user123,password
+user1234,password
+user12345,password
+user123456,password
+user1234567,password
+123user,user123
+1234user,password1234
+user12348,password1
+123,123
+password,user
+12,12
+321,321

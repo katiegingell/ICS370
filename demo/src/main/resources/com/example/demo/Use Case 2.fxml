@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SearchController">
+    <left>
+        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #18344f;" BorderPane.alignment="CENTER">
+            <children>
+                <TextField layoutX="26.0" layoutY="64.0" promptText="Arrival" />
+                <TextField layoutX="26.0" layoutY="27.0" promptText="Departure" />
+                <DatePicker layoutX="3.0" layoutY="98.0" />
+                <Button layoutX="74.0" layoutY="138.0" mnemonicParsing="false" onAction="#search" text="Search" />
+                <Button fx:id="BookNowButton" layoutX="64.0" layoutY="360.0" mnemonicParsing="false" onAction="#onBookNowButtonClick" text="Book Now" />
+                <Button fx:id="logoutButton" layoutX="70.0" layoutY="396.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="Log Out" />
+
+
+            </children>
+        </Pane>
+    </left>
+    <center>
+        <TableView fx:id="flights" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+
+    </center>
+</BorderPane>
