@@ -1,7 +1,4 @@
-package com.example.prototype;
-
-import com.example.prototype.Flight;
-import com.example.prototype.User;
+package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;
