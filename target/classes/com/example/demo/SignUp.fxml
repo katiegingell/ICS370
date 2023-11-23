@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.SignUpController">
+    <left>
+        <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #18344f;" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="#ffb200" layoutX="110.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metro Airlines ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+            <Button fx:id="goBackButton" layoutX="139.0" layoutY="360.0" mnemonicParsing="false" onAction="#onGoBackClick" text="Go Back" />
+            </children></AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="500.0" prefWidth="415.0" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="#18344f" layoutX="123.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Sign Up">
+                    <font>
+                        <Font size="22.0" />
+                    </font>
+                </Text>
+                <Label fx:id="signUpStatusLabel" layoutX="87.0" layoutY="137.0" prefHeight="34.0" prefWidth="175.0" />
+                <Text fx:id="signupStatusText" layoutX="116.0" layoutY="184.0" wrappingWidth="113.0" />
+                <TextField fx:id="signUpUsernameField" layoutX="101.0" layoutY="205.0" promptText="Create Username" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                <PasswordField fx:id="signUpPasswordField" layoutX="101.0" layoutY="238.0" promptText="Create Password" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                <PasswordField fx:id="confirmPasswordField" layoutX="101.0" layoutY="267.0" promptText="Confirm Password" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                <Button fx:id="signUpButton" layoutX="151.0" layoutY="362.0" mnemonicParsing="false" onAction="#onCreateAccountClick" style="-fx-background-color: #18344f;" text="Sign Up" textFill="WHITE" />
+
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>
