@@ -1,7 +1,7 @@
 module com.example.demo {
     requires javafx.controls;
     requires javafx.fxml;
-
+    requires org.json;
     requires com.dlsc.formsfx;
 
     opens com.example.demo to javafx.fxml;

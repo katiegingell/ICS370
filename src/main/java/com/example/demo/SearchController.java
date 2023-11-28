@@ -24,12 +24,14 @@ public class SearchController implements Initializable {
     private TableView<Flight> flights;
     private ObservableList<Flight> flightData;
 
+    private FlightDatabase flightDatabase = FlightDatabase.getInstance();
+
     @FXML
     private Button logoutButton;
 
     public void search() {
 
-        flightData = FXCollections.observableArrayList(Flight.getFlights());
+        flightData = FXCollections.observableArrayList(flightDatabase.getFlights());
 
         //add the data to the table (See below)
         flights.setItems(flightData);
@@ -89,3 +91,4 @@ public class SearchController implements Initializable {
         loadLoginScene();
     }
 }
+
