@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prototype.PaymentConfirmationController">
+    <left>
+        <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #18344f;" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="#ffb200" layoutX="110.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metro Airlines ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+                <Button fx:id="goBackButton" layoutX="138.0" layoutY="355.0" mnemonicParsing="false" onAction="#onGoBackClick" text="Go Back" />
+                <Button fx:id="logoutButton" layoutX="139.0" layoutY="402.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="Log Out" />
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                <AnchorPane prefHeight="500.0" prefWidth="415.0">
+                    <children>
+                        <Text fill="#00ff15" layoutX="74.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Confirmation">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Text>
+                        <Text fx:id="confirmationNumberText" layoutX="74.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirmation Number: " />
+                    </children>
+                </AnchorPane>
+            </children>
+        </VBox>
+    </right>
+</BorderPane>

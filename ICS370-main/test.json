@@ -1,0 +1,36 @@
+{
+  "flight_list": [
+    {
+      "price": 300.0,
+      "destination": "New York",
+      "date": 1640927999000
+    },
+    {
+      "price": 250.0,
+      "destination": "Los Angeles",
+      "date": 1641014399000
+    },
+    {
+      "price": 150.0,
+      "destination": "Chicago",
+      "date": 1641100799000
+    },
+    {
+      "price": 200.0,
+      "destination": "Miami",
+      "date": 1641187199000
+    },
+    {
+      "price": 350.0,
+      "destination": "San Francisco",
+      "date": 1641273599000
+    },
+    {
+      "price": 100.0,
+      "destination": "St Paul",
+      "date": 1641273599000
+    }
+  ]
+}
+
+
