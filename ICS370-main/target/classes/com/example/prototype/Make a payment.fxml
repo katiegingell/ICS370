@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.prototype.PaymentController">
+   <left>
+      <AnchorPane prefHeight="500.0" prefWidth="350.0" style="-fx-background-color: #18344f;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#ffb200" layoutX="110.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Metro Airlines ">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Button fx:id="goBackButton" layoutX="138.0" layoutY="355.0" mnemonicParsing="false" onAction="#onGoBackClick" text="Go Back" />
+            <Button fx:id="logoutButton" layoutX="139.0" layoutY="402.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="Log Out" />
+         </children></AnchorPane>
+   </left>
+   <right>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#18344f" layoutX="112.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight Details">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane prefHeight="500.0" prefWidth="415.0">
+               <children>
+                  <TextField layoutX="107.0" layoutY="322.0" promptText="Card Number" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField layoutX="83.0" layoutY="366.0" prefHeight="27.0" prefWidth="81.0" promptText="EX" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                  <TextField layoutX="197.0" layoutY="366.0" prefHeight="27.0" prefWidth="81.0" promptText="CVV" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                  <Button fx:id="checkoutButton" layoutX="149.0" layoutY="421.0" mnemonicParsing="false" onAction="#onCheckOutClick" style="-fx-background-color: #18344f;" text="Checkout" textFill="WHITE" />
+
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>
