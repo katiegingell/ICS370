@@ -19,10 +19,10 @@ import static org.junit.Assert.*;
             assertNotNull(user.getUsername());
 
             // username should match
-            assertEquals(user.getUsername(),username);
+            assertEquals(username,user.getUsername());
 
             // user flights should match
-            assertEquals(user.getBookFlights(), bookFlights);
+            assertEquals(bookFlights, user.getBookFlights());
         }
     }
 
