@@ -59,7 +59,7 @@ public class JsonParser {
         return flightArray;
     }
 
-    private JSONObject flightToJson(Flight flight) {
+    public JSONObject flightToJson(Flight flight) {
         JSONObject jsonFlight = new JSONObject();
 
         jsonFlight.put("price", flight.getPrice());
