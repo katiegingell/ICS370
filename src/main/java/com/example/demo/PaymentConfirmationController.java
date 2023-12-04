@@ -38,7 +38,7 @@ public class PaymentConfirmationController implements Initializable  {
     }
 
     private void loadFlightsScene() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("Use Case 2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("FlightSearch.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
 
         ((Stage) goBackButton.getScene().getWindow()).setScene(scene);

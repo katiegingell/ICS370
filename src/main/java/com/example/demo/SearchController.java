@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,6 +29,9 @@ public class SearchController implements Initializable {
 
     @FXML
     private Button logoutButton;
+
+    @FXML
+    private Text flightNotSelectedText;
 
     public void search() {
 
@@ -58,7 +62,13 @@ public class SearchController implements Initializable {
 
         UserRepo.selectedFlight = flights.getSelectionModel().getSelectedItem();
 
-        loadPaymentsScene();
+        if(UserRepo.selectedFlight == null){
+            flightNotSelectedText.setText("Flight Not Selected");
+        } else{
+            loadPaymentsScene();
+        }
+
+
     }
 
     @Override

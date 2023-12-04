@@ -25,12 +25,19 @@
                         <Font size="22.0" />
                     </font>
                 </Text>
+                <Text fill="#18344f" text="* indicates a required field">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                 <AnchorPane prefHeight="500.0" prefWidth="415.0">
                     <children>
-                        <TextField layoutX="107.0" layoutY="322.0" promptText="Card Number" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
-                        <TextField layoutX="83.0" layoutY="366.0" prefHeight="27.0" prefWidth="81.0" promptText="EX" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
-                        <TextField layoutX="197.0" layoutY="366.0" prefHeight="27.0" prefWidth="81.0" promptText="CVV" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                        <Text fx:id="paymentStatusText" layoutX="107.0" layoutY="143.0" />
+                        <TextField fx:id="nameOnCardField" layoutX="107.0" layoutY="280.0" promptText="Name on Card*" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="cardNumberField" layoutX="107.0" layoutY="322.0" promptText="Card Number*" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="expirationDateField" layoutX="83.0" layoutY="366.0" prefHeight="27.0" prefWidth="81.0" promptText="EX*" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
+                        <TextField fx:id="cvvNumberField" layoutX="197.0" layoutY="366.0" prefHeight="27.0" prefWidth="81.0" promptText="CVV*" style="-fx-background-color: transparent; -fx-border-color: #18344f; -fx-border-width: 0px 0px 2px 0px;" />
                         <Button fx:id="checkoutButton" layoutX="149.0" layoutY="421.0" mnemonicParsing="false" onAction="#onCheckOutClick" style="-fx-background-color: #18344f;" text="Checkout" textFill="WHITE" />
 
                     </children>

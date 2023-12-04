@@ -1,32 +1,39 @@
 package com.example.demo;
 
-public class Payment {
+import java.io.Serializable;
 
-    private int ID;
+public class Payment implements Serializable {
+
     private String name;
-    private int creditCardNumber;
+    private Long creditCardNumber;
+    private String expirationDate;
+    private int cvvNumber;
     private float amount;
 
 
-    public Payment(int ID, String name, int creditCardNumber, float amount) {
-        this.ID = ID;
+    public Payment(String name, Long creditCardNumber, String expirationDate, int cvvNumber, float amount) {
         this.name = name;
         this.creditCardNumber = creditCardNumber;
+        this.expirationDate = expirationDate;
+        this.cvvNumber = cvvNumber;
         this.amount = amount;
-    }
-
-
-    public int getID() {
-        return ID;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getCreditCardNumber() {
+    public Long getCreditCardNumber() {
 
         return creditCardNumber;
+    }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public int getCvvNumber() {
+        return cvvNumber;
     }
 
     public float getAmount() {

@@ -6,13 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,30 +28,63 @@ public class PaymentController implements Initializable {
     private Button logoutButton;
 
     @FXML
-    private Text confirmationNumberText;
+    private TextField cardNumberField;
 
-    private ConfirmationNumberGenerator confirmationNumberGenerator = new ConfirmationNumberGenerator();
+    @FXML
+    private TextField expirationDateField;
+
+    @FXML
+    private TextField cvvNumberField;
+
+    @FXML
+    private TextField nameOnCardField;
+
+    @FXML
+    private Text paymentStatusText;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
 
+    public static void savePaymentToFile(Payment payment) {
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(payment.getName()));
+            oos.writeObject(payment);
+            oos.close();
+        } catch(IOException e){
+            throw new RuntimeException(e);
+        }
+    }
 
     public void onCheckOutClick(ActionEvent actionEvent) throws IOException {
-        if (UserRepo.selectedFlight != null) {
-            UserRepo.currentUser.getBookFlights().add(UserRepo.selectedFlight);
-            FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("PaymentConfirmation.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+        String nameOnCard = nameOnCardField.getText();
+        String cardNumber = cardNumberField.getText();
+        String expirationDate = expirationDateField.getText();
+        String cvvNumber = cvvNumberField.getText();
 
-            ((Stage) goBackButton.getScene().getWindow()).setScene(scene);
+        if (nameOnCard.isEmpty() || cardNumber.isEmpty() || expirationDate.isEmpty() || cvvNumber.isEmpty()){
+            paymentStatusText.setText("Required field(s) empty");
+        } else {
+            Long cardNumberLong = Long.valueOf(cardNumber);
+            int cvvNumberInt = Integer.parseInt(cvvNumber);
+            Payment payment = new Payment(nameOnCard, cardNumberLong, expirationDate, cvvNumberInt, UserRepo.selectedFlight.getPrice());
+            if (UserRepo.selectedFlight != null) {
+                savePaymentToFile(payment);
+                UserRepo.currentUser.getBookFlights().add(UserRepo.selectedFlight);
+
+                FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("PaymentConfirmation.fxml"));
+                Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+
+                ((Stage) goBackButton.getScene().getWindow()).setScene(scene);
+        }
 
         }
     }
 
 
     private void loadFlightsScene() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("Use Case 2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HomeApplication.class.getResource("FlightSearch.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 500);
 
         ((Stage) goBackButton.getScene().getWindow()).setScene(scene);
